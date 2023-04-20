@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!---------------------------- container ---------------------->
+    <div class="container">
+        <h1 id="heading">Unit Converter</h1>
+        <div class="content">
+
+            <!-------------------- feet start ---------------->
+            <div class="content1">
+                <label for="">feet</label><br>
+                <input type="Number" value="1" id="feet" class="content2">
+            </div>
+            <!-------------------- feet end ---------------->
+
+
+            <div class="content1">
+                <h1>=</h1>
+            </div>
+
+
+            <!-------------------- inches start ---------------->
+            <div class="content1">
+                <label for="">inches</label><br>
+                <input type="Number" value="12" id="inch" class="content2">
+            </div>
+            <!-------------------- inches end ---------------->
+
+
+        </div>
+    </div>
+    <!---------------------------- container ---------------------->
+
+
+
+    <!--------------------------- script start ---------------------------->
+    <script type="text/javascript">
+
+        var feet = document.getElementById('feet');
+        var inch = document.getElementById('inch');
+
+        feet.addEventListener('input', function () {
+            let f = this.value;
+            let i = f * 12;
+
+            inch.value = i;
+        });
+
+        inch.addEventListener('input', function () {
+            let i = this.value;
+            let f = i / 12;
+
+            if (!Number.isInteger(f)) {
+                f = f.toFixed(2);
+            }
+
+            feet.value = f;
+        });
+
+    </script>
+    <!--------------------------- script end ---------------------------->
+
+</body>
+
+</html>
